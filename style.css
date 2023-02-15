@@ -62,3 +62,19 @@ header {
     font-size: 1.8rem;
     cursor: pointer;
 }
+
+.section-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.shop{
+    margin-top: 2rem;
+}
+
+.product-img{
+    width: 50%;
+    height: auto;
+    box-shadow: 0 1px 4px hsl(0 4% 15%/ 10%);
+}
