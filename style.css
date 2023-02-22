@@ -67,6 +67,7 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .shop{
@@ -76,5 +77,27 @@ header {
 .product-img{
     width: 50%;
     height: auto;
-    box-shadow: 0 1px 4px hsl(0 4% 15%/ 10%);
+    box-shadow: 5px 5px 5px hsl(0 4% 15%/ 10%);
+}
+
+.shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+}
+
+.product-box {
+    position: relative;
+}
+
+.product-box:hover{
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    transition: 0.4s;
+}
+
+.product-img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
 }
