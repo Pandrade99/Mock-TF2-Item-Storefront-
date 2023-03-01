@@ -83,10 +83,10 @@ function addProductToCart(title, price, productImg) {
 }
 
 var cartBoxContent = `
-                        <img src="img/manncokey.png" alt="" class="cart-img">
+                        <img src="${productImg}" alt="" class="cart-img">
                         <div class="detail-box">
-                            <div class="cart-product-title">Supply Crate Key</div>
-                            <div class="cart-price">$2.49</div>
+                            <div class="cart-product-title">${title}</div>
+                            <div class="cart-price">${price}</div>
                             <input type="number" value="1" class="cart-quantity">
                         </div>
                         <!-- Remove Cart-->
