@@ -61,12 +61,41 @@ function quantityChanged(event){
 }
 // Add to cart
 function addCartClicked(event){
-    var button = event.target
-    var shopProducts = button.parentElement
-    var title = shopProducts.getElementsByClassName('product-title')[0].innerText
-    console.log(title);
+    var button = event.target;
+    var shopProducts = button.parentElement;
+    var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
+    var price = shopProducts.getElementsByClassName('price')[0].innerText;
+    var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+    addProductToCart(title, price, productImg);
+    updatetotal();
 }
 
+function addProductToCart(title, price, productImg) {
+    var cartShopBox = document.createElement('div');
+    cartShopBox.classList.add('cart-box');
+    var cartItems = document.getElementsByClassName('cart-content')[0];
+    var cartItemsNames = cartItems.getElementsByClassName('cart-product-title');
+    for (var i = 0; i < cartItemsNames.length; i++) {
+        if (cartItemsNames[i].innerText == title) {
+        alert('You have already added this item to your cart!');
+        return;
+    }
+}
+
+var cartBoxContent = `
+                        <img src="img/manncokey.png" alt="" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-product-title">Supply Crate Key</div>
+                            <div class="cart-price">$2.49</div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        <!-- Remove Cart-->
+                        <i class='bx bxs-trash-alt cart-remove' ></i>`;
+cartShopBox.innerHTML = cartBoxContent;
+cartItems.append(cartShopBox);
+cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
+cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged); 
+}
 
 // Update Total
 function updatetotal(){
